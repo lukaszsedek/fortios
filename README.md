@@ -72,3 +72,13 @@ port: 8443
 login: admin
 password: <ask lukaszsedek [at] gmail.com>
 Tested only with REST over HTTPS
+
+
+### Explanation
+
+Fortigate REST API 6.0.4 uses coookies in order to keep session open and authenticated, so OAuth mechanisms cannot be used. Both scripts have been written in python language.
+REST script uses requests library and keeps one session. The rationale behind this was to reuse cookie mechanism for all request/response calls. Without this, every requests should be built from scrach. 
+
+API script leverages another approach with library provided by Fortinet, which hides REST complecity behind the pure python. The benefit of this is the fact that we do not need to care about cookies, REST, etc.
+
+One of the challenges here was to provide simple and robust CLI interface. I used `click` library. 
