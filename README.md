@@ -67,5 +67,8 @@ Log out with success
 
 ### Test Environment
 I used Fortigate EC2 machine in AWS with t2.small flavour. All parameters (except password) are set to match my AWS EC2 Fortigate machine.
-
+host: fg.4cloud.io
+port: 8443
+login: admin
+password: <ask lukaszsedek [at] gmail.com>
 Tested only with REST over HTTPS
